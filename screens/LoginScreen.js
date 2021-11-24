@@ -37,12 +37,11 @@ const LoginScreen = ({ navigation }) => {
   }
   return (
     <View style={styles.container}>
-         <StatusBar translucent backgroundColor={'#000'} />
+         <StatusBar translucent backgroundColor={'#12768c'} />
       <View style={styles.header}>
         <Text style={{ fontSize: 32, color: '#000000', fontWeight:'bold' }}>Login!</Text>
       </View>
       <View style={styles.form}>
-
         {/* <Text style={{fontSize:20,marginLeft:10}}>UserName</Text> */}
         <View style={styles.textInput}>
           <Icon name='person' size={30} color='#000' />
@@ -90,7 +89,7 @@ export default LoginScreen;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,  backgroundColor: '#fff', 
+    flex: 1,  backgroundColor: '#12768c', 
     // justifyContent: 'center'
   },
   header: {

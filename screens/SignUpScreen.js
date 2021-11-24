@@ -124,7 +124,7 @@ export default SignUpScreen;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,backgroundColor:'#fff',
+    flex: 1,backgroundColor:'#12768c',
   },
   header: {
     height: 180,

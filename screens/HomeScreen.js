@@ -10,17 +10,26 @@ export default HomeScreen=({navigation})=>{
            onPress={()=>navigation.navigate('GoogleMapScreen')}>
                <Text style={styles.btnText}> Near By Hospital </Text>
            </TouchableOpacity>
-           {/* <TouchableOpacity style={styles.btnTouchable}
+           <TouchableOpacity style={styles.btnTouchable}
            onPress={()=>navigation.navigate('GoogleMapScreen')}>
-               <Text style={styles.btnText}> Near By Hospital </Text>
-           </TouchableOpacity> */}
+               <Text style={styles.btnText}> Near By Fire Brigade </Text>
+           </TouchableOpacity>
+           <TouchableOpacity style={styles.btnTouchable}
+           onPress={()=>navigation.navigate('GoogleMapScreen')}>
+               <Text style={styles.btnText}> Near By Police Station </Text>
+           </TouchableOpacity>
+           <TouchableOpacity style={styles.btnTouchable}
+           onPress={()=>navigation.navigate('GoogleMapScreen')}>
+               <Text style={styles.btnText}> Near By Parking </Text>
+           </TouchableOpacity>
+           
        </View>
     );
 }
 
 const styles=StyleSheet.create({
   btnTouchable:{
-      backgroundColor:'red',
+      backgroundColor:'#12768c',
       width:'90%',
       height:120,
       margin:5,

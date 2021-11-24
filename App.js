@@ -15,24 +15,30 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="LoginScreen" component={LoginScreen} options={{headerShown:false,
-          headerStyle: { backgroundColor: '#3a53a6' }, headerTintColor: '#fff',
+          headerStyle: { backgroundColor: '#12768c' }, headerTintColor: '#fff',
           headerTitleStyle: {
             fontWeight: 'bold',
           },
         }} />
         <Stack.Screen name="SignUpScreen" component={SignUpScreen} options={{headerShown:false,
-          headerStyle: { backgroundColor: '#3a53a6' }, headerTintColor: '#fff',
+          headerStyle: { backgroundColor: '#12768c' }, headerTintColor: '#fff',
           headerTitleStyle: {
             fontWeight: 'bold',
           },
         }} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} options={{
-          headerStyle: { backgroundColor: '#3a53a6' }, headerTintColor: '#fff',
+          headerStyle: { backgroundColor: '#12768c' }, headerTintColor: '#fff',
           headerTitleStyle: {
             fontWeight: 'bold',
           },
         }} />
-        <Stack.Screen name="GoogleMapScreen" component={GoogleMapScreen} />
+        <Stack.Screen name="GoogleMapScreen" component={GoogleMapScreen} 
+        options={{
+          headerStyle: { backgroundColor: '#12768c' }, headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
