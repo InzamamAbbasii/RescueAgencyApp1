@@ -27,7 +27,8 @@ const LoginScreen = ({ navigation }) => {
           } else {
             //TODO:this is method is written in App.js file we only call it here..
             // signIn(response);
-            navigation.navigate("HomeScreen") 
+            // navigation.navigate("HomeScreen") 
+            navigation.navigate("GoogleMapScreen") 
           }
         })
         .catch((error) => {

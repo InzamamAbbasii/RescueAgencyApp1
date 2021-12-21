@@ -8,6 +8,7 @@ import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
 import SignUpScreen from './screens/SignUpScreen';
 import GoogleMapScreen from './screens/GoogleMapScreen';
+import Hospitals from './screens/Hospitals';
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -33,6 +34,13 @@ function App() {
           },
         }} />
         <Stack.Screen name="GoogleMapScreen" component={GoogleMapScreen} 
+        options={{
+          headerStyle: { backgroundColor: '#12768c' }, headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}/>
+        <Stack.Screen name="Hospitals" component={Hospitals} 
         options={{
           headerStyle: { backgroundColor: '#12768c' }, headerTintColor: '#fff',
           headerTitleStyle: {
