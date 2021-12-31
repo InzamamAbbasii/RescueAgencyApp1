@@ -17,7 +17,7 @@ const SignUpScreen = ({ navigation }) => {
       alert("Password and Confirm Password does not match!");
     } else {
       //Api Code goes here
-      var InsertApiURL = "http://192.168.1.104/RescueAgencyApi/api/user/RegisterUser";
+      var InsertApiURL = `http://${ip}/RescueAgencyApi/api/user/RegisterUser`;
       var headers = {
         'Accept': 'application/json',
         'Content-Type': 'application/json'

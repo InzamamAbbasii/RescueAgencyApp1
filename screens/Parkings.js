@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text, Button, TextInput, TouchableOpacity, ToastAndroid, StatusBar, LogBox, FlatList } from 'react-native';
 import { getDistance,findNearest } from 'geolib';
-const Hospitals = ({ navigation,route }) => {
+const Parkings = ({ navigation,route }) => {
     const [data, setData] = useState([]);
+    console.log('parking');
     useEffect(() => {
-        var InsertApiURL = `http://${ip}/RescueAgencyApi/api/Hospitals/GetHospitalsInfo`;
+        console.log('.....');
+        var InsertApiURL = `http://${ip}/RescueAgencyApi/api/Parking/GetParkingInfo`;
         fetch(InsertApiURL, {
             method: 'GET',
         })
@@ -54,7 +56,7 @@ const Hospitals = ({ navigation,route }) => {
     );
 }
 
-export default Hospitals;
+export default Parkings;
 
 const styles = StyleSheet.create({
     container: {

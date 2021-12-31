@@ -47,13 +47,32 @@ const GoogleMapScreen = ({ navigation }) => {
         >
           <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Hospitals</Text>
         </TouchableOpacity>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           style={styles.btn}
+          onPress={()=>navigation.navigate('PoliceStation',{
+            currentLat:lat,
+            currentLng:lng,
+          })}
         >
           <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Police Stations</Text>
+        </TouchableOpacity> */}
+      </View>
+      <View style={{ flexDirection: 'row'}}>
+        <TouchableOpacity
+          style={styles.btn}
+          onPress={()=>navigation.navigate('Parkings',{
+            currentLat:lat,
+            currentLng:lng,
+          })}
+        >
+          <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}> Parkings </Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.btn}
+          onPress={()=>navigation.navigate('FireBrigade',{
+            currentLat:lat,
+            currentLng:lng,
+          })}
         >
           <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Fire Birgades</Text>
         </TouchableOpacity>
@@ -119,8 +138,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     alignSelf: 'center',
-    // marginTop: 20,
-    backgroundColor: 'red',
+    marginTop: 5,
+    backgroundColor: '#12768c',
   },
 })
 

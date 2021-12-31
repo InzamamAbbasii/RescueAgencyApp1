@@ -17,7 +17,7 @@ const LoginScreen = ({ navigation }) => {
     else if (password.length == 0) {
       alert("Please enter your password!");
     } else {
-      var InsertApiURL = `http://192.168.1.104/RescueAgencyApi/api/user/Login?name=${name}&Password=${password}`;
+      var InsertApiURL = `http://${ip}/RescueAgencyApi/api/user/Login?name=${name}&Password=${password}`;
       fetch(InsertApiURL,  {
           method: 'GET',})
         .then((response) => response.json())
@@ -33,6 +33,7 @@ const LoginScreen = ({ navigation }) => {
         })
         .catch((error) => {
           alert(error);
+          console.log(error);
         })
     }
   }

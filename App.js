@@ -9,9 +9,13 @@ import LoginScreen from './screens/LoginScreen';
 import SignUpScreen from './screens/SignUpScreen';
 import GoogleMapScreen from './screens/GoogleMapScreen';
 import Hospitals from './screens/Hospitals';
+import FireBrigade from './screens/FireBrigade';
+import PoliceStation from './screens/PoliceStation';
+import Parkings from './screens/Parkings';
 const Stack = createNativeStackNavigator();
 
 function App() {
+  global.ip='192.168.1.102';
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -41,6 +45,27 @@ function App() {
           },
         }}/>
         <Stack.Screen name="Hospitals" component={Hospitals} 
+        options={{
+          headerStyle: { backgroundColor: '#12768c' }, headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}/>
+        <Stack.Screen name="FireBrigade" component={FireBrigade} 
+        options={{
+          headerStyle: { backgroundColor: '#12768c' }, headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}/>
+        <Stack.Screen name="PoliceStation" component={PoliceStation} 
+        options={{
+          headerStyle: { backgroundColor: '#12768c' }, headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}/>
+        <Stack.Screen name="Parkings" component={Parkings} 
         options={{
           headerStyle: { backgroundColor: '#12768c' }, headerTintColor: '#fff',
           headerTitleStyle: {
