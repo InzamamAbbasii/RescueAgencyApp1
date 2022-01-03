@@ -1,5 +1,5 @@
-import React, { useState, useContext,useEffect} from 'react';
-import { StyleSheet, View, Text, Button, TextInput, TouchableOpacity, ToastAndroid, StatusBar,LogBox } from 'react-native';
+import React, { useState, useContext, useEffect } from 'react';
+import { StyleSheet, View, Text, Button, TextInput, TouchableOpacity, ToastAndroid, StatusBar, LogBox } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 //Login Screen Code
 const LoginScreen = ({ navigation }) => {
@@ -7,10 +7,10 @@ const LoginScreen = ({ navigation }) => {
   const [password, setPassword] = useState("");
 
   useEffect(() => {
-      LogBox.ignoreAllLogs();
-    }, [])
+    LogBox.ignoreAllLogs();
+  }, [])
 
-    const loginHandle = () => {
+  const loginHandle = () => {
     if (name.length == 0) {
       alert("Please enter your name!");
     }
@@ -18,8 +18,9 @@ const LoginScreen = ({ navigation }) => {
       alert("Please enter your password!");
     } else {
       var InsertApiURL = `http://${ip}/RescueAgencyApi/api/user/Login?name=${name}&Password=${password}`;
-      fetch(InsertApiURL,  {
-          method: 'GET',})
+      fetch(InsertApiURL, {
+        method: 'GET',
+      })
         .then((response) => response.json())
         .then((response) => {
           if (response.includes('Invalid username or password')) {
@@ -28,7 +29,7 @@ const LoginScreen = ({ navigation }) => {
             //TODO:this is method is written in App.js file we only call it here..
             // signIn(response);
             // navigation.navigate("HomeScreen") 
-            navigation.navigate("GoogleMapScreen") 
+            navigation.navigate("GoogleMapScreen")
           }
         })
         .catch((error) => {
@@ -39,9 +40,9 @@ const LoginScreen = ({ navigation }) => {
   }
   return (
     <View style={styles.container}>
-         <StatusBar translucent backgroundColor={'#12768c'} />
+      <StatusBar translucent backgroundColor={'#12768c'} />
       <View style={styles.header}>
-        <Text style={{ fontSize: 32, color: '#000000', fontWeight:'bold' }}>Login!</Text>
+        <Text style={{ fontSize: 32, color: '#000000', fontWeight: 'bold' }}>Login!</Text>
       </View>
       <View style={styles.form}>
         {/* <Text style={{fontSize:20,marginLeft:10}}>UserName</Text> */}
@@ -70,7 +71,7 @@ const LoginScreen = ({ navigation }) => {
         <TouchableOpacity
           style={styles.btnLogin}
           // onPress={()=>{LoginUser()}}
-          onPress={() => {loginHandle() }}
+          onPress={() => { loginHandle() }}
         >
           <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Login</Text>
         </TouchableOpacity>
@@ -91,16 +92,16 @@ export default LoginScreen;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,  backgroundColor: '#12768c', 
+    flex: 1, backgroundColor: '#12768c',
     // justifyContent: 'center'
   },
   header: {
     height: '30%',
     alignItems: 'center',
-    justifyContent:'center',
+    justifyContent: 'center',
     // backgroundColor:'#000',
     // borderBottomRightRadius:130,
-    marginBottom:40,
+    marginBottom: 40,
   },
   textInput: {
     margin: 10,
