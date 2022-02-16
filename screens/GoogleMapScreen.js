@@ -154,6 +154,14 @@ const GoogleMapScreen = ({ navigation }) => {
             <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>Fire Birgades</Text>
           </TouchableOpacity>
         </View>
+        <View style={{ flexDirection: 'row' }}>
+          <TouchableOpacity
+            style={styles.btn}
+            onPress={() => navigation.navigate('HomeScreen')}
+          >
+            <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}> Add </Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -183,8 +191,8 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   btn: {
-    // flex: 1,
-    width: '48%',
+    flex: 1,
+    // width: '48%',
     marginHorizontal: 3,
     // borderRadius: 10,
     height: 50,

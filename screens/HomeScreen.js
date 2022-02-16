@@ -7,20 +7,20 @@ export default HomeScreen=({navigation})=>{
        <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
         
            <TouchableOpacity style={styles.btnTouchable}
-           onPress={()=>navigation.navigate('GoogleMapScreen')}>
-               <Text style={styles.btnText}> Near By Hospital </Text>
+           onPress={()=>navigation.navigate('Hospitals_Info')}>
+               <Text style={styles.btnText}> Hospital </Text>
            </TouchableOpacity>
            <TouchableOpacity style={styles.btnTouchable}
-           onPress={()=>navigation.navigate('GoogleMapScreen')}>
-               <Text style={styles.btnText}> Near By Fire Brigade </Text>
+           onPress={()=>navigation.navigate('FireBrigade_Info')}>
+               <Text style={styles.btnText}>  Fire Brigade </Text>
            </TouchableOpacity>
            <TouchableOpacity style={styles.btnTouchable}
-           onPress={()=>navigation.navigate('GoogleMapScreen')}>
-               <Text style={styles.btnText}> Near By Police Station </Text>
+           onPress={()=>navigation.navigate('PoliceStation_Info')}>
+               <Text style={styles.btnText}> Police Station </Text>
            </TouchableOpacity>
            <TouchableOpacity style={styles.btnTouchable}
-           onPress={()=>navigation.navigate('GoogleMapScreen')}>
-               <Text style={styles.btnText}> Near By Parking </Text>
+           onPress={()=>navigation.navigate('Parking_Info')}>
+               <Text style={styles.btnText}> Parking </Text>
            </TouchableOpacity>
            
        </View>

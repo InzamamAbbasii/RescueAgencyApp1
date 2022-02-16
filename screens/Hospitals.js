@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, Button, TextInput, TouchableOpacity, ToastAndroid, StatusBar, LogBox, FlatList,Linking } from 'react-native';
+import { StyleSheet, View, Text, Button, TextInput, TouchableOpacity, ToastAndroid, StatusBar, LogBox, FlatList,Linking,ActivityIndicator } from 'react-native';
 import { getDistance, findNearest } from 'geolib';
 const Hospitals = ({ navigation, route }) => {
     const [data, setData] = useState([]);
-    console.log(route.params);
+    const [isFetch, setIsFetch] = useState(false);
     useEffect(() => {
+        setIsFetch(true);
         // var InsertApiURL = `http://${ip}/RescueAgencyApi/api/Hospitals/GetHospitalsInfo`;
         var InsertApiURL = `http://${ip}/RescueAgencyApi/api/Hospitals/GetNearestHospitalsInfo?lat=${route.params.currentLat}&lng=${route.params.currentLng}`;
         fetch(InsertApiURL, {
@@ -13,6 +14,7 @@ const Hospitals = ({ navigation, route }) => {
             .then((response) => response.json())
             .then((response) => {
                 setData([]);
+                console.log(response);
                 if (response.length > 0) {
                     if (response.length <= 5) {
                         response.forEach(element => {
@@ -63,30 +65,39 @@ const Hospitals = ({ navigation, route }) => {
             })
             .catch((error) => {
                 alert(error);
-            })
+            }).finally(()=>setIsFetch(false));
     }, [])
     // const makeCall=()=>{
     //     Linking.openURL(`tel:03449154158`);
     // }
     return (
         <View style={styles.container}>
-            <FlatList style={{ padding: 7 }} showsVerticalScrollIndicator={false}
-                data={data}
-                keyExtractor={(item, index) => index}
-                renderItem={({ item, index }) => {
-                    return <View>
-                        <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Name : {item.Name}</Text>
-                        <Text style={{ fontSize: 20, }}>Address : {item.Address}</Text>
-                        {/* <Text style={{ fontSize: 20, fontWeight: '800' }}>Lat : {item.lat} Lng: {item.lng}</Text> */}
-                        <Text style={{ fontSize: 20, fontWeight: '800' }}>Delta: {item.Delta}</Text>
-                        {/* <TouchableOpacity onPress={()=>makeCall()} style={{padding:10}}>
-                            <Text style={{fontSize:20,fontWeight:'bold',color:'blue'}}> 03449154158 </Text>
-                        </TouchableOpacity> */}
-                        <View style={{ width: '100%', borderBottomColor: '#000', borderWidth: 1, marginVertical: 20 }}></View>
+            {
+                isFetch==true?(
+                    <View>
+                        <ActivityIndicator size={'large'} color={'red'} />
                     </View>
-                }
-                }
-            />
+                ):(
+                    <FlatList style={{ padding: 7 }} showsVerticalScrollIndicator={false}
+                    data={data}
+                    keyExtractor={(item, index) => index}
+                    renderItem={({ item, index }) => {
+                        return <View>
+                            <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Name : {item.Name}</Text>
+                            <Text style={{ fontSize: 20, }}>Address : {item.Address}</Text>
+                            {/* <Text style={{ fontSize: 20, fontWeight: '800' }}>Lat : {item.lat} Lng: {item.lng}</Text> */}
+                            <Text style={{ fontSize: 20, fontWeight: '800' }}>Delta: {item.Delta}</Text>
+                            {/* <TouchableOpacity onPress={()=>makeCall()} style={{padding:10}}>
+                                <Text style={{fontSize:20,fontWeight:'bold',color:'blue'}}> 03449154158 </Text>
+                            </TouchableOpacity> */}
+                            <View style={{ width: '100%', borderBottomColor: '#000', borderWidth: 1, marginVertical: 20 }}></View>
+                        </View>
+                    }
+                    }
+                />
+                )
+            }
+           
         </View>
     );
 }
